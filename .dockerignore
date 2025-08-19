@@ -1,0 +1,90 @@
+# Docker build context optimization
+# Exclude files and directories that are not needed in the Docker image
+
+# Version control
+.git
+.gitignore
+
+# IDE specific files
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+.coverage
+.pytest_cache
+
+# Environment files
+.env
+.venv
+venv
+env
+
+# Logs
+*.log
+
+# Distribution / packaging
+.Python
+build/
+dist/
+*.egg-info/
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Documentation
+docs/_build/
+
+# Local development
+app/tests/*
+temp/
+tmp/
+cli_debug/
+debug_utils/
+
+# Project specific
+bad_words/
+bak/
+output/
+
+# Node.js dependencies (if any)
+node_modules/
+
+# sphinx docs
+_build/
+
+# Ignore sync scripts
+sync1.sh
+
+# Ignore demo files that are not needed in production
+ocr_demo
+
+# Ignore project specific files
+source.dev.env

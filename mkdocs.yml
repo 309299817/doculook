@@ -1,0 +1,137 @@
+site_name: DocuLook
+site_url: https://doculook.github.io/DocuLook
+site_description: 文档解析与结构化提取服务
+site_author: DocuLook Team
+
+theme:
+  name: material
+  palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+  
+  features:
+    - content.tabs.link
+    - content.code.annotate
+    - content.code.copy
+    - navigation.expand
+    - navigation.footer
+    - navigation.tabs
+    - navigation.sections
+    - navigation.path
+    - navigation.indexes
+    - navigation.top
+    - navigation.tracking
+    - search.suggest
+    - search.highlight
+    - toc.follow
+    - toc.integrate
+
+copyright: © 2024 DocuLook. All Rights Reserved.
+
+nav:
+  - 首页:
+    - 项目介绍: index.md
+    - 功能特性: features.md
+  - 快速开始:
+    - 安装指南: quick-start/installation.md
+    - 基础使用: quick-start/basic-usage.md
+    - Docker部署: quick-start/docker.md
+  - 使用指南:
+    - API接口: usage/api.md
+    - 命令行工具: usage/cli.md
+    - 配置说明: usage/configuration.md
+    - Word文档处理: usage/word-processing.md
+  - 开发文档:
+    - 项目架构: development/architecture.md
+    - 贡献指南: development/contributing.md
+  - 常见问题: faq.md
+  - 更新日志: changelog.md
+
+plugins:
+  - search:
+      lang: 
+        - zh
+        - en
+  - i18n:
+      docs_structure: folder
+      fallback_to_default: true
+      languages:
+        - locale: zh
+          default: true
+          name: 中文
+          build: true
+        - locale: en
+          name: English
+          build: true
+          nav_translations:
+            首页: Home
+            项目介绍: Introduction
+            功能特性: Features
+            快速开始: Quick Start
+            安装指南: Installation
+            基础使用: Basic Usage
+            Docker部署: Docker Deployment
+            使用指南: User Guide
+            API接口: API Reference
+            命令行工具: CLI Tools
+            配置说明: Configuration
+            Word文档处理: Word Processing
+            开发文档: Development
+            项目架构: Architecture
+            贡献指南: Contributing
+            常见问题: FAQ
+            更新日志: Changelog
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      use_pygments: true
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/DocuLook/DocuLook
+      name: GitHub

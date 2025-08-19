@@ -1,0 +1,43 @@
+services:
+  doculook-api:
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    #   args:
+    #     - PIP_INDEX_URL=https://mirrors.aliyun.com/pypi/simple
+    #     - PIP_TRUSTED_HOST=mirrors.aliyun.com
+    image: 10.8.8.83:9090/library/doculook-api:latest
+    container_name: doculook-api
+    restart: always
+    ports:
+      - 8000:8000
+    environment:
+      DOCULOOK_MODEL_SOURCE: modelscope
+    command: --host 0.0.0.0 --port 8000
+    ulimits:
+      memlock: -1
+      stack: 67108864
+    ipc: host
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ["0"]
+              capabilities: [gpu]
+
+# To build and push the image to Harbor, use the following commands:
+# 1. Build the image:
+#    docker-compose build
+#
+# 2. Tag the image (if not specified in build section):
+#    docker tag mineru-api:latest 10.8.8.83:9090/your-project/mineru-api:latest
+#
+# 3. Push the image to Harbor:
+#    docker push 10.8.8.83:9090/your-project/mineru-api:latest
+#
+# 4. On the target server, update the docker-compose.yaml to use the Harbor image:
+#    image: 10.8.8.83:9090/your-project/mineru-api:latest
+#
+# 5. Deploy on the target server:
+#    docker-compose up -d
