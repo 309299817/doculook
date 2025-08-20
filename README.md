@@ -423,11 +423,16 @@ python server.py --host 0.0.0.0 --port 8000
 
 ### Docker 部署
 
-```dockerfile
-# 构建镜像
-docker build -t doculook-api:latest .
+```
+docker run -p 8000:8000 --name doculook weihengfeng/doculook:v1
+```
 
-# 运行容器
+```dockerfile
+# 直接部署
+docker run -d -p 8000:8000 --name doculook weihengfeng/doculook:v1
+
+# 本地部署
+docker build -t doculook-api:latest .
 docker run -p 8000:8000 --name doculook doculook-api:latest
 ```
 
