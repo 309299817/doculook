@@ -5,9 +5,7 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-RESTful%20API-orange)](https://fastapi.tiangolo.com/)
 [![Transformers](https://img.shields.io/badge/🤗%20Transformers-Model%20Hub-yellow)](https://huggingface.co/)
 
-> **Language / 语言**: [English](#english) | [中文](#chinese)
-
-<a name="english"></a>
+> **Language / 语言**: English | [中文](README_CN.md)
 
 DocuLook is an intelligent document parsing system based on deep learning, specifically designed to convert PDF, image, and Office documents into structured Markdown/JSON formats. This project integrates the latest technologies in computer vision, natural language processing, and document understanding to provide high-precision, high-performance document parsing solutions.
 
@@ -749,42 +747,3 @@ Special thanks to the following open-source projects and communities:
 </div>
 
 ---
-
-<a name="chinese"></a>
-
-# DocuLook：智能文档解析与结构化提取系统
-
-> **Language / 语言**: [English](#english) | [中文](#chinese)
-
-DocuLook 是一个基于深度学习的智能文档解析系统，专门用于将 PDF、图片和 Office 文档转换为结构化的 Markdown/JSON 格式。该项目融合了计算机视觉、自然语言处理和文档理解的最新技术，提供了高精度、高性能的文档解析解决方案。
-
-## 🚀 核心技术特色
-
-### 💡 技术创新点
-
-#### 1. **多模态文档理解架构**
-- **版面分析引擎**：基于 YOLO v8 深度学习模型，实现像素级精确的文档版面分析
-- **多模态融合**：集成视觉模型与语言模型，提供文本、图像、表格的统一理解
-- **自适应解析策略**：根据文档类型自动选择最优解析路径
-
-#### 2. **先进的 OCR 技术栈**
-- **双引擎 OCR**：集成 PaddleOCR (ppocr) + 大模型 Vision LLM 双重识别
-- **智能后备机制**：ppocr 失败时自动切换到 LLM，确保识别准确性
-- **增强处理算法**：预处理图像增强、自适应阈值调整、多尺度识别
-
-#### 3. **革命性的 Office 直处理技术**
-- **零损失解析**：绕过 PDF 转换，直接从 Office 源文件提取内容
-- **结构保真**：完美保持原文档的层次结构、格式和布局
-- **智能内容定位**：精确识别并保持图片、表格在原始位置
-
-### 🎯 技术亮点
-
-| 技术特色 | 传统方案 | DocuLook 方案 | 技术优势 |
-|---------|---------|---------------|----------|
-| **PDF 解析** | 简单文本提取 | 深度学习版面分析 + 多模态理解 | 🔥 结构化精度提升 300% |
-| **OCR 识别** | 单一 OCR 引擎 | ppocr + Vision LLM 双引擎 | 🚀 复杂场景识别率 >95% |
-| **Office 处理** | PDF 转换损失 | 直接源文件解析 | ⚡ 零损失、完美保真 |
-| **表格识别** | 简单行列检测 | SLANet+ 深度表格理解 | 🎯 复杂表格识别率 >90% |
-| **数学公式** | 无法处理 | UnimerNet 专业公式识别 | 📊 LaTeX 精确输出 |
-
-**⭐ 如果 DocuLook 对您有帮助，请给我们一个 Star！⭐**
